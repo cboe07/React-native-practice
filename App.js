@@ -19,20 +19,22 @@ export default class App extends React.Component {
 
     }
   render() {
-
+    const goodTip = parseFloat(this.state.amount * .2).toFixed(2)
+    const okTip = parseFloat(this.state.amount * .1).toFixed(2)
     return (
       <View style={styles.container}>
         <View style={styles.nav}>
           <TextInput 
             style={styles.amount}
             placeholder="Enter Bill Amount"
-            placeholderTextColor = '#9A73EF'
+            placeholderTextColor = "#9A73EF"
             keyboardType = "numeric"
             onChangeText = {this.handleChange}
           />
         </View>
         <View>
-          <Text>${this.state.amount * .2} - for great service</Text>
+          <Text>${goodTip} - for great service</Text>
+          <Text>${okTip} - for OK service</Text>
         </View>
       </View>
     );
